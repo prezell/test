@@ -15,9 +15,6 @@ public class GroupController {
 	@Autowired
 	private GroupsService service;
 	
-	public void setService(GroupsService service) {
-		this.service = service;
-	}
 	
 	@RequestMapping(value="/group/{groupId}/modify",
 			method = RequestMethod.GET)

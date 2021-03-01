@@ -24,9 +24,6 @@ public class MemberController {
 	@Autowired
 	private MembersService service;
 	
-	public void setService(MembersService service) {
-		this.service = service;
-	}
 
 	@RequestMapping(value= {"/","/index"},
 			method=RequestMethod.GET)

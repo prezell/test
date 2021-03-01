@@ -28,9 +28,6 @@ public class IdolController {
 	@Autowired
 	private IdolsService service;
 
-	public void setService(IdolsService service) {
-		this.service = service;
-	}
 	
 	@RequestMapping(value = "/idol/{idolId}/modify",
 			method = RequestMethod.GET)

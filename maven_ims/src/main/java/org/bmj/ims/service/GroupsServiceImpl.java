@@ -21,14 +21,6 @@ implements GroupsService{
 	@Autowired
 	private IdolsDAO idolsDAO;
 	
-	public void setIdolsDAO(IdolsDAO idolsDAO) {
-		this.idolsDAO = idolsDAO;
-	}
-	
-	public void setGroupsDAO(GroupsDAO groupsDAO) {
-		this.groupsDAO = groupsDAO;
-	}
-	
 	@Override
 	public Map<String,Object> getGroups(int page) {
 

@@ -45,9 +45,6 @@ public class TestController {
 	@Autowired
 	private GroupsService service;
 	
-	public void setService(GroupsService service) {
-		this.service = service;
-	}
 	
 	/*
 	@RequestMapping(value="/REST.ims",
