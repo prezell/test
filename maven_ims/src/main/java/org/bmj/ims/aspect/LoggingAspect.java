@@ -17,12 +17,12 @@ public class LoggingAspect {
 	private final  Logger logger = 
 			LoggerFactory.getLogger(this.getClass());
 	
-	@Before(value = "bean(*DAOImpl)")
-	 public void logging(JoinPoint joinPoint){
-         
-         String name = joinPoint.getSignature().getName();
-         System.out.println(":::: signatureName " + name);
-    }
+//	@Before(value = "bean(*DAOImpl)")
+//	 public void logging(JoinPoint joinPoint){
+//         
+//         String name = joinPoint.getSignature().getName();
+//         System.out.println(":::: signatureName " + name);
+//    }
 	
 	@Around(value="bean(*DAOImpl) || bean(*ServiceImpl)")
 	 //전후 //컨트롤로 패키지의 하위에  별은 클래스 명 메스명 인자

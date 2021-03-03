@@ -1,6 +1,8 @@
 package org.bmj.ims.controller;
 
 
+import java.util.Map;
+
 import org.bmj.ims.service.GroupsService;
 import org.bmj.ims.vo.Group;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class GroupController {
@@ -59,12 +62,23 @@ public class GroupController {
 			method=RequestMethod.GET)
 	public String groups(Model model,
 			@PathVariable int page) {
-		
 		model.addAllAttributes(service.getGroups(page));
-		
 		return "groupList";
 	}
 	
+	@RequestMapping(value="/ajax/group",
+			method=RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> groupsAjax(Model model,
+			 int page) {
+		return service.getGroups(page);
+	}
+	
+	@RequestMapping(value="/group",
+			method=RequestMethod.GET)
+	public String groups() {
+		return "groupListAjax";
+	}
 	
 	@RequestMapping(
 			value="/group",

@@ -26,12 +26,12 @@ implements GroupsService{
 
 		Map<String,Object> modelMap=new ConcurrentHashMap<String, Object>();
 		
-		PageVO pageVO=new PageVO(page,10);
+		PageVO pageVO=new PageVO(page,5);
 	
 		int total=groupsDAO.selectTotal();
 		
 		String paginate=PaginateUtil.getPaginate(
-				page, total, 10, 3, "/group");
+				page, total, 5, 3, "/group");
 		
 		modelMap.put("groupList", groupsDAO.selectList(pageVO));
 		modelMap.put("paginate", paginate);

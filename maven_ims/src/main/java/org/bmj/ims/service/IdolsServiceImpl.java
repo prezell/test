@@ -27,11 +27,7 @@ public class IdolsServiceImpl implements IdolsService{
 	
 	@Autowired
 	private GroupsDAO groupsDAO;
-	
-	public void setGroupsDAO(GroupsDAO groupsDAO) {
-		this.groupsDAO = groupsDAO;
-	}
-	
+
 	@Override
 	public Map<String,Object> getIdols(int page) {
 		
@@ -104,6 +100,7 @@ public class IdolsServiceImpl implements IdolsService{
 		idolsDAO.updateLikeCount(like.getTypeNo());
 		
 	}
+	
 }
 
 
