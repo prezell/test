@@ -66,6 +66,7 @@ public class GroupController {
 		return "groupList";
 	}
 	
+	//ajax로 페이징
 	@RequestMapping(value="/ajax/group",
 			method=RequestMethod.GET)
 	@ResponseBody
@@ -74,11 +75,13 @@ public class GroupController {
 		return service.getGroups(page);
 	}
 	
+	//ajax를 위한 jsp
 	@RequestMapping(value="/group",
 			method=RequestMethod.GET)
 	public String groups() {
 		return "groupListAjax";
 	}
+	
 	
 	@RequestMapping(
 			value="/group",
